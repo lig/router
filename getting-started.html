@@ -44,7 +44,7 @@ node_modules/
 <code>router-view-port</code> is like <code>ng-view</code>; it&#39;s a placeholder for part of your app loaded
 dynamically based on the route configuration.</p>
 <p>So how do we configure the app? Let&#39;s open <code>app.js</code> and find out. Add this to the file:</p>
-<pre><code class="lang-js"><span class="identifier">angular</span>.<span class="identifier">module</span>(<span class="string">'app'</span>, [<span class="string">'ngNewRouter'</span>])
+<pre><code class="lang-js"><span class="identifier">angular</span>.<span class="identifier">module</span>(<span class="string">'myApp'</span>, [<span class="string">'ngNewRouter'</span>])
   .<span class="identifier">controller</span>(<span class="string">'AppController'</span>, [<span class="string">'$router'</span>, <span class="identifier">AppController</span>]);
 
 <span class="keyword">function</span> <span class="identifier">AppController</span> (<span class="param">$router</span>) {
@@ -82,7 +82,7 @@ Then <code>touch components/home/home.html</code> and <code>touch components/hom
 </code></pre>
 <p>To wire this up, We need to add a <code>&lt;script&gt;</code> tag to our <code>index.html</code>:</p>
 <pre><code class="lang-html">...
-<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"./components/detail/detail.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"./components/home/home.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
 </code></pre>
 <p>And add the controller&#39;s module as a dependency to our main module in `app.js:</p>
 <pre><code class="lang-js"><span class="identifier">angular</span>.<span class="identifier">module</span>(<span class="string">'app'</span>, [<span class="string">'ngNewRouter'</span>, <span class="string">'app.home'</span>])
